@@ -201,3 +201,103 @@ flag:
 :10,20	s/like/nameg
 
 ：%		s/like//n
+
+精确匹配：% s/**\\<stop\\>**/name/g
+
+## 八、vim多文件操作
+
+## 1、Buffer\windows\tab
+
+buffer：打开的一个文件的缓冲区
+
+windows:buffer可视化的分割区域
+
+tab：可以组织窗口为一个工作区
+
+## 2、如何实现在buffer间切换
+
+`ls：`列出当前所有的缓冲区
+
+`bn:n`代表数字，跳转到指定的缓冲区
+
+`:bpre 	:bnext	:bfirst	:blast`的用法
+
+## 3、window窗口的划分和跳转
+
+`:sp`	水平划分窗口
+
+`:vs`	竖直划分窗口
+
+`ctrl +w+whjkl`：实现窗口的切换
+
+`ctrl+=`:使所有的窗口等高等宽
+
+## 4、tab标签页
+
+`:tabnew filename`	在新的标签页中打开文件
+
+`gt`:跳到上一个标签页
+
+`GT`:跳到下一个标签页
+
+## 九、vim中的文本对象
+
+vim中的文本对象是指一个单词或者一个句子或则一个段落
+
+如何使用文本对象
+
+`[number]<command>[text object]`
+
+number表示数字
+
+command表示命令d\c\y
+
+text object:要操作的文本对象
+
+`yiw\ci(\ci"`个自的含义是什么？
+
+## 十、vim中复制和粘贴
+
+复制粘贴 y/p
+
+剪切粘贴 d/p
+
+V选择要复制的内容，然后用p粘贴
+
+解决粘贴出现排版的问题
+
+**:set past**
+
+**然后再粘贴**
+
+**：set nopast**
+
+**"{register}**:寄存器、a-z均可使用
+
+:reg	查看寄存器
+
+## 十一、vim的宏
+
+了解即可
+
+用q+寄存器开始录制，使用q结束录制
+
+思考：如何快速再每行首部添加同一个字符
+
+十二、vim补全大法
+
+`ctrl+n ctrl+p`:单词补全
+
+`ctrl+x ctrl+f`:文件名补全
+
+`r! echo %:`快速得到当前文件名
+
+`：r! echo %:p`：快速得到绝对路径
+
+## 十二、vim配色
+
+：colorscheme 当前主题颜色
+
+：colorscheme ctrl+d 显示所有配色
+
+：colorscheme 配色名	修改配色
