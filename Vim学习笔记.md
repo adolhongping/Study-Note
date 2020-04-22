@@ -82,19 +82,19 @@ ctrl+v:与hjkl建结合使用，块状选取
 
 ### 2、实用移动
 
-​	1、w/W
+​	**1、w/W**
 
 ​		w:移动到下一个单词词首
 
 ​		W:移动到下一个以空格分隔的单词词首
 
-​	2、e/E
+​	**2、e/E**
 
 ​		e:移动到下一个单词的词尾
 
 ​		E:移动到下一个以空格分隔的单词词尾
 
-​	3、b/B
+​	**3、b/B**
 
 ​		b：移动到上一个单词的词首
 
@@ -102,15 +102,15 @@ ctrl+v:与hjkl建结合使用，块状选取
 
 ### 3、行间搜索移动
 
-​	f{char}:在一行中快速搜索一个字符，并跳转到它。
+​	**f{char}:**在一行中快速搜索一个字符，并跳转到它。
 
 ​		；下一个匹配
 
 ​		，上一个匹配
 
-​	F{char}：反向搜索
+​	**F{char}：**反向搜索
 
-​	t{char}:跳转到想要查找字符的前一个字符
+​	**t{char}:**跳转到想要查找字符的前一个字符
 
 ### 4、vim水平移动
 
@@ -130,11 +130,11 @@ ctrl+v:与hjkl建结合使用，块状选取
 
 ### 6、vim页面移动
 
-​	gg/G： 文章首行/尾行
+​	**gg/G：** 文章首行/尾行
 
 ​	`ctrl+o`	快速返回到上次编辑的行
 
-​	H/M/L	屏幕的头部/中部/尾部
+​	**H/M/L**	屏幕的头部/中部/尾部
 
 ​	`ctrl+u` 下一页 
 
@@ -184,15 +184,15 @@ ctrl+v:与hjkl建结合使用，块状选取
 
 ## 1、格式
 
-：[range] 	s/{pattern}/{string}/[falgs]
+`：[range] 	s/{pattern}/{string}/[falgs]`
 
 flag:
 
-​	g:globle全局范围
+​	**g:globle**全局范围
 
-​	c:confirm:表示请求确认
+​	**c:confirm:**表示请求确认
 
-​	n:只计数，不替换
+​	**n:**只计数，不替换
 
 ## 2、示例
 
@@ -208,11 +208,11 @@ flag:
 
 ## 1、Buffer\windows\tab
 
-buffer：打开的一个文件的缓冲区
+**buffer：**打开的一个文件的缓冲区
 
-windows:buffer可视化的分割区域
+**windows:**buffer可视化的分割区域
 
-tab：可以组织窗口为一个工作区
+**tab：**可以组织窗口为一个工作区
 
 ## 2、如何实现在buffer间切换
 
@@ -230,6 +230,8 @@ tab：可以组织窗口为一个工作区
 
 `ctrl +w+whjkl`：实现窗口的切换
 
+`ctrl +w+HJKL：实现窗口的移动
+
 `ctrl+=`:使所有的窗口等高等宽
 
 ## 4、tab标签页
@@ -238,7 +240,7 @@ tab：可以组织窗口为一个工作区
 
 `gt`:跳到上一个标签页
 
-`GT`:跳到下一个标签页
+`gT`:跳到下一个标签页
 
 ## 九、vim中的文本对象
 
@@ -301,3 +303,46 @@ V选择要复制的内容，然后用p粘贴
 ：colorscheme ctrl+d 显示所有配色
 
 ：colorscheme 配色名	修改配色
+
+## 十三、vim映射
+
+**映射**：把一个操作，映射到另一个操作上去
+
+**基本映射**：normal模式下的映射
+
+​	`map - x`:用-号代替删除键x
+
+​	`map <c-d> dd`:使用ctrl+d执行dd删除一行
+
+**其他模式的映射**：
+
+​	`nmap`:normal下的映射
+
+​	`imap`:insert下的映射
+
+​	`vmap`:visual下的映射
+
+**如何避免递归映射：**采用非递归映射
+
+​	nnoremap\inoremap\vnoremap
+
+**如何写vimscript:**《本方法学vimscript》
+
+## 十四、vim插件
+
+**安装插件管理器：**Plug-in
+
+https://github.com/junegunn/vim-plug
+
+**常用插件**
+
+``Plug 'mhinz/vim-startify'`
+ `Plug 'preservim/nerdtree'`
+ `Plug 'kien/ctrlp.vim'` 
+ `Plug 'vim-airline/vim-airline'`
+ `Plug 'vim-airline/vim-airline-themes'` 
+ `Plug 'Yggdroot/indentLine'`
+ `Plug 'w0ng/vim-hybrid'`
+ `Plug 'altercation/solarized'`
+
+## **持续更新！**
