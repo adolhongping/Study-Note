@@ -134,14 +134,14 @@ const int &a=10;会分配内存
 
 ### 7、对象的构造和析构
 
-#### 1、什么是构造函数和析构函数
+#### 	1、什么是构造函数和析构函数
 
 代码链接：https://blog.csdn.net/weixin_45233461/article/details/106089555
 
 - 对象的初始化和清理
 - 如果程序员没有提供构造函数和析构函数，系统会默认提供，空实现！
 
-#### 2、构造函数
+  #### 2、构造函数
 
 - 与类名相同
 - 没有返回值
@@ -149,7 +149,7 @@ const int &a=10;会分配内存
 - 可以发生重载（可以有参数）
 - 构造函数由编译器自动调用，而不是手动，而且只会调用一次
 
-#### 3、析构函数
+  #### 3、析构函数
 
 - 与类名相同，类名前加“~”
 - 也没有返回值
@@ -157,7 +157,7 @@ const int &a=10;会分配内存
 
 - 自动调用，只会调用一次
 
-#### 4、构造函数的分类和调用
+  #### 4、构造函数的分类和调用
 
 代码连接：https://blog.csdn.net/weixin_45233461/article/details/106235142
 
@@ -168,9 +168,10 @@ const int &a=10;会分配内存
   - 普通构造函数
   - 拷贝构造函数
 - Person(1):匿名对象
+  
   - 不能用拷贝构造函数初始化匿名对象
-
-#### 5、拷贝构造函数调用时机
+  
+  #### 5、拷贝构造函数调用时机
 
 代码连接：https://blog.csdn.net/weixin_45233461/article/details/106236486
 
@@ -179,14 +180,14 @@ const int &a=10;会分配内存
 3. 以值的方式返回局部对象
 4. Release模式下会对代码进行优化（VS 中！)
 
-#### 6、构造函数的调用规则
+   #### 6、构造函数的调用规则
 
 系统默认给一个类提供三个函数 默认函数、拷贝函数、析构函数
 
 1. 当我们提供了有参构造函数，那么系统就不会再给我们提供默认构造函数了，但是系统会提供默人拷贝构造函数，进行简单的值拷贝
 2. 当提供了拷贝构造函数，系统将不会提供其他构造函数
 
-#### 7、深拷贝和浅拷贝
+   #### 7、深拷贝和浅拷贝
 
 代码链接：https://blog.csdn.net/weixin_45233461/article/details/106257127
 
@@ -200,11 +201,128 @@ const int &a=10;会分配内存
 
 解决上述问题，需要我们自己提供拷贝构造函数，进行深拷贝
 
-### 8、初始化列表语法
+#### 	8、初始化列表语法
 
 代码链接：https://blog.csdn.net/weixin_45233461/article/details/106268605
 
 在构造函数后面+ ：属性（参数、值），属性（参数、值）......
+
+#### 	9、类对象作为成员变量
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106362440
+
+1. 当类对象作为类的成员函数时，构造顺序是先构造类对象的构造，然后构造自己
+2. 析构的顺序相反
+
+   #### 10、new运算符和delete运算符
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106365616
+
+1. Person *p=new Person;会返回一个Person指针
+2. 默认调用构造函数，开辟空间，返回的不是void *,不需要强制转换
+3. delete释放
+4. new出的对象用void *接收，会出现释放不了对象
+5. new出来的是数组，如何释放，使用delete []
+6. new出来的是数组，肯定会调用默认构造
+
+### 8、类
+
+#### 8.1、静态成员变量和静态成员函数
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106382012
+
+- 静态成员变量
+
+  - 静态成员变量编译阶段分配内存
+
+  - 所有对象共享数据
+
+  - 可以通过对象访问，通过类名访问
+
+  - 有权限控制
+
+  - 类内声明，类外初始化
+
+- 静态成员函数
+
+  - 可以访问静态成员变量，不能访问普通成员变量
+  - 普通的成员函数都可以访问
+  - 静态成员函数有权限
+  - 可以通过对象访问，也可以通过类名访问
+
+#### 8.2 单例模式
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106391351
+
+单例模式案例2：https://blog.csdn.net/weixin_45233461/article/details/106397128
+
+1. 目的：为了让类中只有一个实例，实例也不需要自己释放
+2. 将默认构造和拷贝构造私有化
+3. 内部维护一个对象指针
+4. 私有化唯一指针
+5. 对外提供getinstance 方法来访问这个指针
+6. 保证了类中只能实例化一个唯一的对象
+
+#### 8.3 C++模型初探，成员变量和成员函数分开储存
+
+代码链接：
+
+1. 成员变量和成员属性时分开储存的
+2. 空类的 大小为1
+3. 只有非静态成员才属于对象身上
+4. 注意字节对齐
+
+#### 8.4 this指针的 使用
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/de
+
+tails/106408506
+
+1. this指针永远指向当前对象
+2. 解决命名的冲突
+3. 如果返回实体，返回*this 指向本体
+4. 非静态的成员函数才有静态指针
+
+#### 8.5 空指针访问成员函数
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106408461
+
+1. 如果成员函数没有用到this,那么空指针可以直接访问
+2. 如果成员函数用到了this指针，就要注意，可以加this判断，如果this为空，return掉！
+
+#### 8.6 常函数和常对象
+
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106410024
+
+1. 常函数 void func() const{}
+2. 常函数 修饰的是this指针，const type * const this
+3. 常函数不能修改this指针执行的值
+4. 成对象 在对象前加入const修饰 const Person p1;
+5. 常对象 不能调用普通成员函数，可以调用常函数
+6. 用mutable修饰的关键字是在常函数中可以修改的
+
+#### 8.7 友元函数
+
+1. 全局函数做友元函数
+   
+   ​	链接：https://blog.csdn.net/weixin_45233461/article/details/106516228
+   
+   1. 将全局函数写到类中做声明，并在最前面加上关键字 friend
+   
+2. 类作为友元类
+
+   链接：https://blog.csdn.net/weixin_45233461/article/details/106516216
+
+   1. friend class 类名	
+   2. 友元关系不能被继承
+   3. 友元关系是单向的，类A是类B的友元，但类B不一定是类A的友元
+   4. 友元关系不具有传递性
+   
+3. 让成员函数作为友元函数
+
+   代码链接：
+
+   1. friend void goodGay::visit();
 
 ## 关键字
 
@@ -222,6 +340,12 @@ https://www.runoob.com/cprogramming/c-function-strlen.html
 
 strlen(name)+1；+1的目的是包含结束符！
 
+### 4、explicit关键字
+
+https://blog.csdn.net/u012278016/article/details/79930952?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159049699719724835825064%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=159049699719724835825064&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-79930952.pc_insert_v7&utm_term=explicit%E5%85%B3%E9%94%AE%E5%AD%97
+
+防止隐式类型转换
+
 
 
 ## 学习问题总结：
@@ -229,6 +353,10 @@ strlen(name)+1；+1的目的是包含结束符！
 ### 1、C++11编译问题：warning: ISO C++11 does not allow conversion from string literal to 'char *'
 
 https://blog.csdn.net/wangzhezhilu001/article/details/104216989?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+### 2、字节对齐
+
+https://blog.csdn.net/cclethe/article/details/79659590
 
 
 
