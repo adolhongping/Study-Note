@@ -320,7 +320,7 @@ tails/106408506
    
 3. 让成员函数作为友元函数
 
-   代码链接：
+   代码链接：https://blog.csdn.net/weixin_45233461/article/details/106589894
 
    1. friend void goodGay::visit();
 
