@@ -265,18 +265,16 @@ const int &a=10;会分配内存
 
 #### 8.3 C++模型初探，成员变量和成员函数分开储存
 
-代码链接：
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106398109
 
-1. 成员变量和成员属性时分开储存的
-2. 空类的 大小为1
+1. 成员变量和成员属性是分开储存的
+2. 空类的大小为1
 3. 只有非静态成员才属于对象身上
 4. 注意字节对齐
 
 #### 8.4 this指针的 使用
 
-代码链接：https://blog.csdn.net/weixin_45233461/article/de
-
-tails/106408506
+代码链接：https://blog.csdn.net/weixin_45233461/article/details/106408506
 
 1. this指针永远指向当前对象
 2. 解决命名的冲突
@@ -305,13 +303,13 @@ tails/106408506
 
 1. 全局函数做友元函数
    
-   ​	链接：https://blog.csdn.net/weixin_45233461/article/details/106516228
+   代码链接：https://blog.csdn.net/weixin_45233461/article/details/106516228
    
    1. 将全局函数写到类中做声明，并在最前面加上关键字 friend
    
 2. 类作为友元类
 
-   链接：https://blog.csdn.net/weixin_45233461/article/details/106516216
+   代码链接：https://blog.csdn.net/weixin_45233461/article/details/106516216
 
    1. friend class 类名	
    2. 友元关系不能被继承
