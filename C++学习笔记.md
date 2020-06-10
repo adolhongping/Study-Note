@@ -345,7 +345,7 @@ const int &a=10;会分配内存
    
 3. #### 前置++、后置++运算符重载
 
-    代码链接：
+    代码链接：https://blog.csdn.net/weixin_45233461/article/details/106657578
 
    1. 自己实现int类型 	MyInteger
    2. 内部维护int的数据
@@ -354,9 +354,9 @@ const int &a=10;会分配内存
    5. 重载++运算符 operator++():前置    operator++(int):后置
    6. 前置思路：先++,后返回自己   后置思路：先保存住原有值，内部++,返回临时数据
    
-4. #### 只能指针的实现
+4. #### 智能指针的实现
 
-    代码链接：
+    代码链接：https://blog.csdn.net/weixin_45233461/article/details/106658010
 
     1. Person类有成员函数showage()
     2. 如果new出来的Person对象，程序员要去主动释放 delete
