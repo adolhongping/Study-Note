@@ -333,7 +333,7 @@ const int &a=10;会分配内存
    3. 函数名为operator+（）{}
    4. 运算符重载也可以提供多个版本
 
-2. 左移运算符的重载
+2. #### 左移运算符的重载
 
    代码链接：https://blog.csdn.net/weixin_45233461/article/details/106627628
 
@@ -342,6 +342,26 @@ const int &a=10;会分配内存
    3. cout << 直接对person自定义数据类型进行输出
    4. 写到全局函数中 ostream& operator<<(ostream &cout,Person &p1){}
    5. 如果重载时候想访问p1的私有成员，那么全局函数要做Person的友元函数
+   
+3. #### 前置++、后置++运算符重载
+
+    代码链接：
+
+   1. 自己实现int类型 	MyInteger
+   2. 内部维护int的数据
+   3. MyInteger myint
+   4. myint++、++myint的实现
+   5. 重载++运算符 operator++():前置    operator++(int):后置
+   6. 前置思路：先++,后返回自己   后置思路：先保存住原有值，内部++,返回临时数据
+   
+4. #### 只能指针的实现
+
+    代码链接：
+
+    1. Person类有成员函数showage()
+    2. 如果new出来的Person对象，程序员要去主动释放 delete
+    3. 有了智能指针，让只能指针托管这个Person对象，就不用操心对象的释放了，让只能指针管理。
+    4. 为了让智能指针像普通的Person*指针一样使用，就要重载->和 *；
 
 ## 关键字
 
